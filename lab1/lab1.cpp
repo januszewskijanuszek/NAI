@@ -12,10 +12,10 @@ using namespace std;
 
 using myMap = map<string, string>;
 // double(double)
-// 1 wychodzi
-// 2, ... wchodzi
+// 1 output
+// 2, ... input
 using oneElementFunction = function<double(double)>;
-using doubleElementFunction = function<double(int, int)>;
+using twoElementFunction = function<double(int, int)>;
 
 void errorMessage(){
     cout << "lab1 [FUNCTION] [ARG...]\n";
@@ -26,20 +26,36 @@ void errorMessage(){
     exit(ERROR_CODE);
 }
 
-void printOne(double value, oneElementFunction func){
-    cout << func(value);
+void printOne(double value, oneElementFunction function){
+    cout << function(value);
+}
+
+void printTwo(int parameterOne, int parameterTwo, twoElementFunction function){
+    cout << function(parameterOne, parameterTwo);
 }
 
 int main(int argc, char** argv) {
     map<string, oneElementFunction> oneFormat;
-    map<string, doubleElementFunction> twoFormat;
+    map<string, twoElementFunction> twoFormat;
     if(argc == 3){
         oneFormat["sin"] = [](double x){return sin(x);};
-        int value = stod(*(argv + 2));
-        printOne(value, oneFormat.at(*(argv + 1)));
+        vector<string> inputArgs(argv, argv + argc);
+        // k -> you can chose what function you want to call by (k) key
+        try{
+            printOne(
+                    stod(inputArgs.at(2)),
+                    oneFormat.at(inputArgs.at(1)));
+        } catch (out_of_range e){ errorMessage();}
     } else if(argc == 4){
         twoFormat["add"] = [](int x, int y){return x + y;};
         twoFormat["mod"] = [](int x, int y){return x % y;};
+        vector<string> inputArgs(argv, argv + argc);
+        try {
+            printTwo(
+                    stoi(inputArgs.at(2)),
+                    stoi(inputArgs.at(3)),
+                    twoFormat.at(inputArgs.at(1)));
+        } catch (out_of_range e){ errorMessage();}
     } else{
         errorMessage();
     }
