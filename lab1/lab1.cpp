@@ -10,7 +10,6 @@
 
 using namespace std;
 
-using myMap = map<string, string>;
 // double(double)
 // 1 output
 // 2, ... input
