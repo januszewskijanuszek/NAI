@@ -1,1 +1,1 @@
-# NAI
+# NAI - Narzędzia sztucznej inteligencji

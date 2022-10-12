@@ -10,11 +10,7 @@
 
 using namespace std;
 
-// double(double)
-// 1 output
-// 2, ... input
-using oneElementFunction = function<double(double)>;
-using twoElementFunction = function<double(int, int)>;
+using predefinedFunction = function<double(vector<double>)>;
 
 void errorMessage(){
     cout << "lab1 [FUNCTION] [ARG...]\n";
@@ -26,31 +22,21 @@ void errorMessage(){
 }
 
 int main(int argc, char** argv) {
-    map<string, oneElementFunction> oneFormat;
-    map<string, twoElementFunction> twoFormat;
-    if(argc == 3){
-        oneFormat["sin"] = [](double x){return sin(x);};
-        vector<string> inputArgs(argv, argv + argc);
-        // k -> you can chose what function you want to call by (k) key
+    map<string, predefinedFunction> functionMap;
+    vector<string> args(argv, argc + argv);
+    vector<double> doubleArgs;
+    for(int i = 2 ; true ; i++){
         try{
-            cout << oneFormat[inputArgs.at(1)](
-                    stoi(inputArgs.at(2))) << endl;
-        }
-        catch (out_of_range e){ errorMessage();}
-        catch (bad_function_call e){ errorMessage();}
-    } else if(argc == 4){
-        twoFormat["add"] = [](int x, int y){return x + y;};
-        twoFormat["mod"] = [](int x, int y){return x % y;};
-        vector<string> inputArgs(argv, argv + argc);
-        try {
-            cout << twoFormat[inputArgs.at(1)](
-                    stoi(inputArgs.at(2)),
-                    stoi(inputArgs.at(3))) << endl;
-        }
-        catch (bad_function_call e){ errorMessage();}
-        catch (out_of_range e){ errorMessage();}
-    } else{
-        errorMessage();
+            doubleArgs.push_back(stod(args.at(i)));
+        } catch(out_of_range e){break;}
     }
+    functionMap["add"] = [](vector<double> x){double sum = 0;for(double value : x){sum += value;}return sum;};
+    functionMap["mod"] = [](vector<double> x){double sum = 0;for(int i = 0 ; i < 2 ; i++){sum += x.at(i);}return sum;};
+    functionMap["sin"] = [](vector<double> x){return sin(x.at(0));};
+    try{
+        cout << functionMap[args.at(1)](doubleArgs) << endl;
+    }
+    catch(out_of_range e){errorMessage();}
+    catch(bad_function_call e){errorMessage();}
     return OK;
 }
