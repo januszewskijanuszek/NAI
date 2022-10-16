@@ -5,12 +5,11 @@
 #include <cmath>
 #include <string>
 #include <random>
-#include <limits.h>
 
 using namespace std;
 using dVector = vector<double>;
 
-#define AMOUNT_OF_PROBES 100000
+#define AMOUNT_OF_PROBES 10
 
 // Rand devices declaration
 random_device randomDevice;
@@ -79,5 +78,12 @@ int main(int argc, char** argv){
         return pow(values.at(0) + 2 * values.at(1) - 7, 2) + pow(2 * values.at(0) + values.at(1) - 5, 2);
     };
     printResult(randomProbing(funcMap[rawArgs.at(1)], domain, AMOUNT_OF_PROBES));
+    for(int j = 1;j < 1000000; j = j * 10) {
+        double sum = 0;
+        for (int i = 0; i < 20; i++) {
+            sum += randomProbing(funcMap[rawArgs.at(1)], domain, AMOUNT_OF_PROBES*j).at(0);
+        }
+        cout << 10*j <<" 20 avg: " << sum / 20.0 << endl;
+    }
     return 0;
 }

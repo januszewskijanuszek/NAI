@@ -11,7 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52d9f818-9322-4cef-97c6-b9e78716e920" name="Changes" comment="beginning working at bruteforce">
+    <list default="true" id="52d9f818-9322-4cef-97c6-b9e78716e920" name="Changes" comment="finish">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
@@ -58,7 +58,7 @@
     <property name="structure.view.defaults.are.configured" value="true" />
   </component>
   <component name="RunManager">
-    <configuration name="NAI" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="bea -4.5 4.5 -4.5 4.5" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="NAI" TARGET_NAME="NAI" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="NAI" RUN_TARGET_NAME="NAI">
+    <configuration name="NAI" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="booth -10 10 -10 10" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="NAI" TARGET_NAME="NAI" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="NAI" RUN_TARGET_NAME="NAI">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -75,7 +75,7 @@
       <workItem from="1665672801195" duration="63000" />
       <workItem from="1665864322389" duration="8352000" />
       <workItem from="1665878632858" duration="723000" />
-      <workItem from="1665924968446" duration="5416000" />
+      <workItem from="1665924968446" duration="7180000" />
     </task>
     <task id="LOCAL-00001" summary="first steps">
       <created>1665868621862</created>
@@ -126,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665928067741</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="finish">
+      <created>1665930806037</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1665930806037</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +155,7 @@
     <MESSAGE value="first function update" />
     <MESSAGE value="working second function update" />
     <MESSAGE value="beginning working at bruteforce" />
-    <option name="LAST_COMMIT_MESSAGE" value="beginning working at bruteforce" />
+    <MESSAGE value="finish" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish" />
   </component>
 </project>
