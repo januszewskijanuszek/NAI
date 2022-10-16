@@ -77,7 +77,16 @@ int main(int argc, char** argv){
         for(double d : values) if(-10 > d || d > 10) throw invalid_argument("Input must be between -10 and 10");
         return pow(values.at(0) + 2 * values.at(1) - 7, 2) + pow(2 * values.at(0) + values.at(1) - 5, 2);
     };
-    printResult(randomProbing(funcMap[rawArgs.at(1)], domain, AMOUNT_OF_PROBES));
+    try{
+        printResult(randomProbing(funcMap[rawArgs.at(1)], domain, AMOUNT_OF_PROBES));
+    }catch (out_of_range e){
+        cout << "Usage -> [Function] [x start domain] [x end domain] [y start domain] [y end domain]" << endl;
+        cout << "Functions : Domain" << endl;
+        cout << "Beale function : -4.5 <-> 4.5" << endl;
+        cout << "Goldstein-Price function : -2 <-> 2" << endl;
+        cout << "Booth function : -10 <-> 10" << endl;
+        return 1;
+    }
     for(int j = 1;j < 1000000; j = j * 10) {
         double sum = 0;
         for (int i = 0; i < 20; i++) {
