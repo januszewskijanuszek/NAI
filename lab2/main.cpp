@@ -10,7 +10,7 @@
 using namespace std;
 using dVector = vector<double>;
 
-#define AMOUNT_OF_PROBES 100
+#define AMOUNT_OF_PROBES 100000
 
 // Rand devices declaration
 random_device randomDevice;
@@ -19,9 +19,15 @@ mt19937 mtGenerator(randomDevice());
 void domainInputValidator(dVector domain){
     for(int i = 0 ; true ; i = i + 2){
         try{
-            if(domain.at(i) > domain.at(i + 1)) throw invalid_argument("First goes smaller argument!");
+            domain.at(i) > domain.at(i + 1) ? throw invalid_argument("First goes smaller argument!") : 0;
         } catch (out_of_range e){ break;}
     }
+}
+
+void printResult(dVector result){
+    cout << "Smallest value: " << result.at(0) << endl;
+    cout << "X = " << result.at(1) << endl;
+    cout << "Y = " << result.at(2) << endl;
 }
 
 dVector randomProbing(const function<double(dVector)>& testedFunction, dVector domain, int iteracions){
@@ -29,18 +35,30 @@ dVector randomProbing(const function<double(dVector)>& testedFunction, dVector d
     double x_end = domain.at(1);
     double y_start = domain.at(2);
     double y_end = domain.at(3);
+    dVector smallestValues(3);
+    smallestValues[0] = numeric_limits<double>::max();
     for(int i = 0 ; i < iteracions ; i++){
+        dVector radomPoints(2);
         uniform_real_distribution<double> x_distribution(x_start, x_end);
         uniform_real_distribution<double> y_distribution(y_start, y_end);
+        radomPoints[0] = x_distribution(mtGenerator);
+        radomPoints[1] = y_distribution(mtGenerator);
+        double temp = testedFunction(radomPoints);
+        if(smallestValues[0] > temp){
+            smallestValues[0] = temp;
+            smallestValues[1] = radomPoints.at(0);
+            smallestValues[2] = radomPoints.at(1);
+        }
     }
-    vector<double> siema;
-    return siema;
+    return smallestValues;
 }
 
 int main(int argc, char** argv){
     vector<string> rawArgs(argv, argc + argv);
     dVector domain;
-    for(int i = 2 ; i < argc ; i++) domain.push_back(stod(rawArgs.at(i)));
+    try {for (int i = 2; i < argc; i++) domain.push_back(stod(rawArgs.at(i)));
+    }catch (exception e){throw invalid_argument("Input must be a number!");}
+    domainInputValidator(domain);
     map<string, function<double(dVector)>> funcMap;
     funcMap["bea"] = [](const dVector& values){
         for(double d : values) if(-4.5 > d || d > 4.5) throw invalid_argument("Input must be between -4.5 and 4.5");
@@ -60,6 +78,6 @@ int main(int argc, char** argv){
         for(double d : values) if(-10 > d || d > 10) throw invalid_argument("Input must be between -10 and 10");
         return pow(values.at(0) + 2 * values.at(1) - 7, 2) + pow(2 * values.at(0) + values.at(1) - 5, 2);
     };
-    cout << funcMap[rawArgs.at(1)](domain);
+    printResult(randomProbing(funcMap[rawArgs.at(1)], domain, AMOUNT_OF_PROBES));
     return 0;
 }
