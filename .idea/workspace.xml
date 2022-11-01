@@ -11,8 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52d9f818-9322-4cef-97c6-b9e78716e920" name="Changes" comment="0.6">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="52d9f818-9322-4cef-97c6-b9e78716e920" name="Changes" comment="0.7 bruteforce">
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
@@ -96,7 +95,7 @@
       <workItem from="1667226393013" duration="511000" />
       <workItem from="1667227972336" duration="1081000" />
       <workItem from="1667274455586" duration="1000" />
-      <workItem from="1667316631427" duration="15695000" />
+      <workItem from="1667316631427" duration="16849000" />
     </task>
     <task id="LOCAL-00001" summary="first steps">
       <created>1665868621862</created>
@@ -217,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667330346564</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="0.7 bruteforce">
+      <created>1667332481146</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1667332481146</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,6 +252,7 @@
     <MESSAGE value="0.4" />
     <MESSAGE value="0.5" />
     <MESSAGE value="0.6" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.6" />
+    <MESSAGE value="0.7 bruteforce" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.7 bruteforce" />
   </component>
 </project>
