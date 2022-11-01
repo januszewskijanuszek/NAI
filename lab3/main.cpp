@@ -64,6 +64,23 @@ public:
         this -> testFunction = testFunction;
         this -> domain = Domain(domain);
     }
+    Result bruteForce(int iteracions = 100000){
+        clock_t start, end;
+        start = clock();
+
+        vector<double> smallestValues(2);
+        double lowestPoint = numeric_limits<double>::max();
+        for(int i = 0 ; i < iteracions ; i++){
+            vector<double> radomPoints = domain.generateRandomPoints();
+            double temp = testFunction(radomPoints);
+            if(lowestPoint > temp){
+                lowestPoint = temp;
+                smallestValues = radomPoints;
+            }
+        }
+        end = clock();
+        return Result(((double)(end - start)) / CLOCKS_PER_SEC, lowestPoint, smallestValues[0], smallestValues[1]);
+    }
     Result hillClimbing(int maxIterations = 10000){
     #define STEP 0.01
         clock_t start, end;
@@ -93,18 +110,19 @@ public:
         end = clock();
         return Result(((double)(end - start)) / CLOCKS_PER_SEC, initialValue, randomPoints.at(0), randomPoints.at(1));
     }
-    Result anneal(int maxIterations = 100000) {
+    Result anneal(int temperature = 1000) {
+        #define STEP 0.01
         clock_t start, end;
         start = clock();
         vector<vector<double>> visitedPoints(2);
         visitedPoints[0] = domain.generateRandomPoints();
-        for(int k = 1; k < maxIterations ; k++){
+        for(double k = 1.0; k < temperature ; k += STEP){
             vector<double> tkPoints = neighborFunc(visitedPoints[0]);
-            if(testFunction(tkPoints) < testFunction(visitedPoints[0])) visitedPoints[1] = tkPoints;
+            if(testFunction(tkPoints) <= testFunction(visitedPoints[0])) visitedPoints[1] = tkPoints;
             else{
                 visitedPoints[1] = (
-                        generateRandomPointInRange({0, 1}) >
-                        exp(-1 * abs(testFunction(tkPoints) - testFunction(visitedPoints[0]) / (1.0 / k)))
+                        generateRandomPointInRange({0, 1}) <
+                        exp(-1 * abs(testFunction(tkPoints) - testFunction(visitedPoints[0]) / (1.0 / log(k))))
                         ? tkPoints : visitedPoints[0]);
             }
         }
@@ -136,8 +154,6 @@ int main(int argc, char** argv) {
         for(double d : values) if(-10 > d || d > 10) throw invalid_argument("Input must be between -10 and 10");
         return pow(values.at(0) + 2 * values.at(1) - 7, 2) + pow(2 * values.at(0) + values.at(1) - 5, 2);
     }, {-10, 10, -10, 10});
-    for(int i = 0 ; i < 10 ; i++){
-        testedFunctions[0].anneal().writeResult();
-    }
+    testedFunctions[0].bruteForce().writeResult();
     return 0;
 }
