@@ -1,4 +1,6 @@
 # ninja log v5
 2	686	6876664424422251	CMakeFiles/NAI.dir/lab2/main.cpp.obj	2b66ea4d7fc773e8
-687	810	6876664425638242	NAI.exe	4dbcaf83593cdd7d
+297	364	6889340519696173	NAI.exe	97b9d88725063ceb
 4	511	6875708564871859	CMakeFiles/NAI.dir/lab2/demo.cpp.obj	f9c9ddab102ce25f
+2	627	6888760761874158	CMakeFiles/NAI.dir/lab3/main.cpp.obj	7bc35192073ba96a
+2	297	6889340519046181	CMakeFiles/NAI.dir/lab3/test.cpp.obj	3cc63ecafc4d3cef

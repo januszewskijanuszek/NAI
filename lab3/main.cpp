@@ -12,9 +12,8 @@ using domain_t = vector<double>;
 random_device rd;
 mt19937 mtGenerator(rd());
 
-void writeOutResults(double time, double result){
-    using namespace std;
-    cout<<"\nTime: "<<time<<" Result: "<<result;
+void writeResult(vector<double> result){
+    cout<<"Total Time: "<<result.at(0)<<" Point: "<<result.at(1) << " X -> " << result.at(2) << " Y -> " << result.at(3) << endl;
 }
 
 void hillClimbChainger(vector<double>* oldPoints, vector<double> newPoints, double* initialValue, double newInitialValue){
@@ -24,6 +23,8 @@ void hillClimbChainger(vector<double>* oldPoints, vector<double> newPoints, doub
 
 // val 1 - time
 // val 2 - best result
+// val 3 - best x
+// val 4 - best y
 vector<double> hillClimbing(function<double(vector<double>)> func, vector<double> domain, int maxIterations = 10000){
 #define STEP 0.01
     clock_t start, end;
@@ -41,6 +42,7 @@ vector<double> hillClimbing(function<double(vector<double>)> func, vector<double
     double initialValue = func(randomPoints);
 
     for(int i = 0 ; i < maxIterations ; i++){
+        if(randomPoints.at(0) >= x_end - STEP || randomPoints.at(0) <= x_start + STEP || randomPoints.at(1) >= y_end - STEP || randomPoints.at(1) <= y_start + STEP) break;
         if(func({randomPoints.at(0) + STEP, randomPoints.at(1) + STEP}) < initialValue)
             hillClimbChainger(&randomPoints,{randomPoints.at(0) + STEP, randomPoints.at(1) + STEP},&initialValue,
                               func({randomPoints.at(0) + STEP, randomPoints.at(1) + STEP}));
@@ -54,57 +56,56 @@ vector<double> hillClimbing(function<double(vector<double>)> func, vector<double
             hillClimbChainger(&randomPoints,{randomPoints.at(0) - STEP, randomPoints.at(1) - STEP},&initialValue,
                               func({randomPoints.at(0) - STEP, randomPoints.at(1) - STEP}));
     }
-
     end = clock();
     double totalTime = ((double)(end - start)) / CLOCKS_PER_SEC;
-    return {totalTime};
+    return {totalTime, initialValue, randomPoints.at(0), randomPoints.at(1)};
 }
 
-void anneal(function<double(vector<double>)> function, vector<double> domain, int maxIterations=1000, double step=5){
-    uniform_real_distribution<double> dist(domain.at(0), domain.at(1));
-    uniform_real_distribution<double> randomiserd(0, 3);
-    uniform_real_distribution<double> randomiseru(0, 1);
-    vector<double> s;
-    double x = dist(mtGenerator);
-    double y = dist(mtGenerator);
-    s.push_back(function(x,y));
-    cout<<"Starting value: ";
-    cout<<s.back()<<endl;
-    //cout<<"\nD00PA\n";
-    for(int k=1;k<maxIterations;k+=step){
-        //cout<<"\nD0"<<k<<"PA\n";
-
-        double a = neighbours(x,step, domain).at(randomiserd(mtGenerator));
-        double b = neighbours(y,step, domain).at(randomiserd(mtGenerator));
-        //cout<<endl<<"a:"<<a<<" b: "<<b<<endl;
-        double tempResult = function(a,b);
-//        cout<<s.back()<<endl;
-//        cout<<"TempResult:"<< tempResult<<endl;
-        if(tempResult<=s.back()){
-//            cout<<"116\n";
-            s.push_back(tempResult);
-            x=a;
-            y=b;
-        }
-        else{
-//            cout<<"122";
-            double u = randomiseru(mtGenerator);
-            double Tk = 1.0/k;
-            if( u < exp(-1*(    abs(tempResult-s.back())/Tk  ))      ){
-//                cout<<"126";
-                s.push_back(tempResult);
-                x=a;
-                y=b;
-            }
-            else{
-
-            }
-//            cout<<endl;
-        }
-    }
-    //cout<<"koniec\n";
-    cout<<"End value: "<<s.back()<<endl;
-}
+//void anneal(function<double(vector<double>)> function, vector<double> domain, int maxIterations=1000, double step=5){
+//    uniform_real_distribution<double> dist(domain.at(0), domain.at(1));
+//    uniform_real_distribution<double> randomiserd(0, 3);
+//    uniform_real_distribution<double> randomiseru(0, 1);
+//    vector<double> s;
+//    double x = dist(mtGenerator);
+//    double y = dist(mtGenerator);
+//    s.push_back(function(x,y));
+//    cout<<"Starting value: ";
+//    cout<<s.back()<<endl;
+//    //cout<<"\nD00PA\n";
+//    for(int k=1;k<maxIterations;k+=step){
+//        //cout<<"\nD0"<<k<<"PA\n";
+//
+//        double a = neighbours(x,step, domain).at(randomiserd(mtGenerator));
+//        double b = neighbours(y,step, domain).at(randomiserd(mtGenerator));
+//        //cout<<endl<<"a:"<<a<<" b: "<<b<<endl;
+//        double tempResult = function(a,b);
+////        cout<<s.back()<<endl;
+////        cout<<"TempResult:"<< tempResult<<endl;
+//        if(tempResult<=s.back()){
+////            cout<<"116\n";
+//            s.push_back(tempResult);
+//            x=a;
+//            y=b;
+//        }
+//        else{
+////            cout<<"122";
+//            double u = randomiseru(mtGenerator);
+//            double Tk = 1.0/k;
+//            if( u < exp(-1*(    abs(tempResult-s.back())/Tk  ))      ){
+////                cout<<"126";
+//                s.push_back(tempResult);
+//                x=a;
+//                y=b;
+//            }
+//            else{
+//
+//            }
+////            cout<<endl;
+//        }
+//    }
+//    //cout<<"koniec\n";
+//    cout<<"End value: "<<s.back()<<endl;
+//}
 
 
 
@@ -113,8 +114,8 @@ int main(int argc, char** argv) {
     vector<string> input(argv, argc + argv);
     vector<double> domain;
     // Takes 4 (double) numbers and set is as domain begin and end x, y
-    try {for (int i = 1; i < argc; i++) domain.push_back(stod(input.at(i)));
-    }catch (exception e){throw invalid_argument("Input must be a number!");}
+//    try {for (int i = 1; i < argc; i++) domain.push_back(stod(input.at(i)));
+//    }catch (exception e){throw invalid_argument("Input must be a number!");}
 
     vector<function<double(vector<double>)>> funcMap(AMOUNT_OF_FUNTIONS);
     // Goldstein–Price function
