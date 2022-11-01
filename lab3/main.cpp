@@ -112,24 +112,31 @@ public:
         end = clock();
         return Result(((double)(end - start)) / CLOCKS_PER_SEC, initialValue, randomPoints.at(0), randomPoints.at(1), name);
     }
-    Result anneal(int temperature = 1000) {
-        #define STEP 0.01
+    Result anneal(int temperature = 10000) {
         clock_t start, end;
         start = clock();
-        vector<vector<double>> visitedPoints(2);
-        visitedPoints[0] = domain.generateRandomPoints();
-        for(double k = 1.0; k < temperature ; k += STEP){
-            vector<double> tkPoints = neighborFunc(visitedPoints[0]);
-            if(testFunction(tkPoints) <= testFunction(visitedPoints[0])) visitedPoints[1] = tkPoints;
+        vector<vector<double>> visitedPoints;
+        visitedPoints.push_back(domain.generateRandomPoints());
+        for(int k = 1; k < temperature ; k++){
+            vector<double> tkPoints = neighborFunc(visitedPoints.at(k - 1));
+            if(testFunction(tkPoints) <= testFunction(visitedPoints.at(k - 1))) visitedPoints.push_back(tkPoints);
             else{
-                visitedPoints[1] = (
+                visitedPoints.push_back(
                         generateRandomPointInRange({0, 1}) <
-                        exp(-1 * abs(testFunction(tkPoints) - testFunction(visitedPoints[0]) / (1.0 / log(k))))
-                        ? tkPoints : visitedPoints[0]);
+                        exp(-1 * abs(testFunction(tkPoints) - testFunction(visitedPoints.at(k - 1)) / (1.0 / k)))
+                        ? tkPoints : visitedPoints.at(k - 1));
+            }
+        }
+        vector<double> bestCoords;
+        double val = numeric_limits<double>::max();
+        for(vector<double> element : visitedPoints){
+            if(testFunction(element) < val){
+                val = testFunction(element);
+                bestCoords = element;
             }
         }
         end = clock();
-        return Result(((double)(end - start)) / CLOCKS_PER_SEC,testFunction(visitedPoints[1]),visitedPoints[1].at(0),visitedPoints[1].at(1), name);
+        return Result(((double)(end - start)) / CLOCKS_PER_SEC,val,bestCoords.at(0),bestCoords.at(1), name);
     }
 };
 
