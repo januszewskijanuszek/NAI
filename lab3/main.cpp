@@ -157,12 +157,11 @@ int main(int argc, char** argv) {
         for(double d : values) if(-10 > d || d > 10) throw invalid_argument("Input must be between -10 and 10");
         return pow(values.at(0) + 2 * values.at(1) - 7, 2) + pow(2 * values.at(0) + values.at(1) - 5, 2);
     }, {-10, 10, -10, 10});
-    testedFunctions[0].anneal().writeResult();
-//    for(TestFunction testFunction : testedFunctions){
-//        cout << "---------------------------------------------" << endl;
-//        testFunction.bruteForce().writeResult();
-//        testFunction.anneal().writeResult();
-//        testFunction.hillClimbing().writeResult();
-//    }
+    for(TestFunction testFunction : testedFunctions){
+        cout << "---------------------------------------------" << endl;
+        testFunction.bruteForce().writeResult();
+        testFunction.anneal().writeResult();
+        testFunction.hillClimbing().writeResult();
+    }
     return 0;
 }
