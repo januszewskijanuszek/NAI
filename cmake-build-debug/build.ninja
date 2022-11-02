@@ -49,11 +49,11 @@ cmake_ninja_workdir = C$:/Users/januszewskijanuszek/Documents/GitHub/NAI/cmake-b
 
 build cmake_object_order_depends_target_NAI: phony || CMakeFiles/NAI.dir
 
-build CMakeFiles/NAI.dir/lab3/main.cpp.obj: CXX_COMPILER__NAI_Debug C$:/Users/januszewskijanuszek/Documents/GitHub/NAI/lab3/main.cpp || cmake_object_order_depends_target_NAI
-  DEP_FILE = CMakeFiles\NAI.dir\lab3\main.cpp.obj.d
+build CMakeFiles/NAI.dir/lab4/main.cpp.obj: CXX_COMPILER__NAI_Debug C$:/Users/januszewskijanuszek/Documents/GitHub/NAI/lab4/main.cpp || cmake_object_order_depends_target_NAI
+  DEP_FILE = CMakeFiles\NAI.dir\lab4\main.cpp.obj.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles\NAI.dir
-  OBJECT_FILE_DIR = CMakeFiles\NAI.dir\lab3
+  OBJECT_FILE_DIR = CMakeFiles\NAI.dir\lab4
 
 
 # =============================================================================
@@ -63,7 +63,7 @@ build CMakeFiles/NAI.dir/lab3/main.cpp.obj: CXX_COMPILER__NAI_Debug C$:/Users/ja
 #############################################
 # Link the executable NAI.exe
 
-build NAI.exe: CXX_EXECUTABLE_LINKER__NAI_Debug CMakeFiles/NAI.dir/lab3/main.cpp.obj
+build NAI.exe: CXX_EXECUTABLE_LINKER__NAI_Debug CMakeFiles/NAI.dir/lab4/main.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\NAI.dir
