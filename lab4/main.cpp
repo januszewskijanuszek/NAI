@@ -4,7 +4,7 @@
 #include <bitset>
 #include <string>
 
-#define INDEX_NUMBER 164
+#define INDEX_NUMBER 116
 
 using namespace std;
 
@@ -15,20 +15,21 @@ class BitTrans{
 private:
     class Parts{
     private:
-        vector<bitset<41>> bitsetElements;
+        vector<bitset<INDEX_NUMBER / 4>> bitsetElements;
         vector<double> convertedValues;
     public:
         Parts(){};
         Parts(vector<bool> bitStream){
-            for(int i = 0 ; i < INDEX_NUMBER ; i += 41){
+            for(int i = 0 ; i < INDEX_NUMBER ; i += INDEX_NUMBER / 4){
                 string temp;
-                for(int j = 0 ; j < 41 ; j++) temp += to_string(bitStream.at(j + i));
-                bitsetElements.push_back(bitset<41>(temp));
-                convertedValues.push_back(bitset<41>(temp).to_ullong());
+                for(int j = 0 ; j < INDEX_NUMBER / 4 ; j++) temp += to_string(bitStream.at(j + i));
+                bitsetElements.push_back(bitset<INDEX_NUMBER / 4>(temp));
+                convertedValues.push_back(bitset<INDEX_NUMBER / 4>(temp).to_ullong());
             }
         }
-        const vector<bitset<41>> &getBitsetElements() const {return bitsetElements;}
         const vector<double> &getConvertedValues() const {return convertedValues;}
+        const void toBinary(){for(bitset<INDEX_NUMBER / 4> bit : bitsetElements) cout << bit << endl;}
+        const void toDecimal(){for(bitset<INDEX_NUMBER / 4> bit : bitsetElements) cout << bit.to_ullong() << endl;}
     };
     vector<bool> bitStream;
     Parts parts;
@@ -54,12 +55,14 @@ public:
         }
         else throw out_of_range("Number should have exacly 164 bits");
     }
-    void printParts(){ for(bitset<41> bit : parts.getBitsetElements()) cout << bit.to_ullong() << endl;}
+    Parts print(){return parts;}
     void printXandY(){cout << "X -> " << x << " | Y -> " << y << endl;}
 };
 
 int main(){
     BitTrans gene;
+    gene.print().toBinary();
+    gene.print().toDecimal();
     gene.printXandY();
     return 0;
 }
