@@ -11,17 +11,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52d9f818-9322-4cef-97c6-b9e78716e920" name="Changes" comment="4.0 done">
-      <change afterPath="$PROJECT_DIR$/lab4/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-9fdcaa99ed57430ab2d9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2022-11-01T15-31-46-0808.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-NAI-Debug-886bc03e2fd253f74fa4.json" beforeDir="false" />
+    <list default="true" id="52d9f818-9322-4cef-97c6-b9e78716e920" name="Changes" comment="4.1">
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +96,7 @@
       <workItem from="1667226393013" duration="511000" />
       <workItem from="1667227972336" duration="1081000" />
       <workItem from="1667274455586" duration="1000" />
-      <workItem from="1667316631427" duration="32135000" />
+      <workItem from="1667316631427" duration="32730000" />
     </task>
     <task id="LOCAL-00001" summary="first steps">
       <created>1665868621862</created>
@@ -258,7 +252,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667339073052</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="4.1">
+      <created>1667351298125</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1667351298125</updated>
+    </task>
+    <task id="LOCAL-00024" summary="4.1">
+      <created>1667351305196</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1667351305196</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,6 +300,7 @@
     <MESSAGE value="3.8" />
     <MESSAGE value="3.9" />
     <MESSAGE value="4.0 done" />
-    <option name="LAST_COMMIT_MESSAGE" value="4.0 done" />
+    <MESSAGE value="4.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="4.1" />
   </component>
 </project>

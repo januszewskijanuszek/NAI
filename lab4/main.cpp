@@ -41,10 +41,6 @@ public:
     BitTrans(){
         bitStream.resize(INDEX_NUMBER);
         for(int i = 0 ; i < bitStream.size() ; i++) bitStream[i] = generateRandomBool();
-        for(bool x : bitStream){
-            cout << x;
-        }
-        cout << endl;
         parts = Parts(bitStream);
         this -> x = parts.getConvertedValues().at(0) / (parts.getConvertedValues().at(1) / INDEX_NUMBER);
         this -> y = parts.getConvertedValues().at(2) / (parts.getConvertedValues().at(3) / INDEX_NUMBER);
