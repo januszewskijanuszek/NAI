@@ -14,9 +14,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52d9f818-9322-4cef-97c6-b9e78716e920" name="Changes" comment="4.1">
+    <list default="true" id="52d9f818-9322-4cef-97c6-b9e78716e920" name="Changes" comment="4.2 generic types">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2022-11-01T22-03-08-0888.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
@@ -113,7 +112,7 @@
       <workItem from="1667569004737" duration="6879000" />
       <workItem from="1667754227639" duration="1705000" />
       <workItem from="1667779630389" duration="1657000" />
-      <workItem from="1667861426110" duration="2123000" />
+      <workItem from="1667861426110" duration="4794000" />
     </task>
     <task id="LOCAL-00001" summary="first steps">
       <created>1665868621862</created>
@@ -297,7 +296,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667391213188</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="4.2 generic types">
+      <created>1667863592173</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1667863592173</updated>
+    </task>
+    <task id="LOCAL-00028" summary="4.2 generic types">
+      <created>1667863600704</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1667863600704</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,7 +345,8 @@
     <MESSAGE value="3.9" />
     <MESSAGE value="4.0 done" />
     <MESSAGE value="4.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="4.1" />
+    <MESSAGE value="4.2 generic types" />
+    <option name="LAST_COMMIT_MESSAGE" value="4.2 generic types" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

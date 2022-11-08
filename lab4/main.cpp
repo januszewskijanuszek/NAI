@@ -3,7 +3,6 @@
 #include <random>
 #include <bitset>
 #include <string>
-#include <typeinfo>
 #include <functional>
 
 #define INDEX_NUMBER 116
@@ -38,9 +37,9 @@ private:
     vector<U> bitStream;
     Parts<U> parts;
     double x, y;
-    static int generateRandomInt(){
+    static int generateRandom(){
         mt19937 rng(random_device{}());
-        return uniform_int_distribution<int>{numeric_limits<int>::min(), numeric_limits<int>::max()}(rng);
+        return uniform_int_distribution<int>{numeric_limits<U>::min(), numeric_limits<U>::max()}(rng);
     }
     static bool generateRandomBool(){
         mt19937 rng(random_device{}());
@@ -50,8 +49,9 @@ public:
     BitTrans<U>(){
         bitStream.resize(INDEX_NUMBER);
         function<U()> tempFunc;
-        if(*typeid(U).name() == 'b') tempFunc = generateRandomBool;
-        if(*typeid(U).name() == 'i') tempFunc = generateRandomInt;
+        const type_info &inputedType = typeid(U);
+        if(*inputedType.name() == 'b') tempFunc = generateRandomBool;
+        if(*inputedType.name() == 'i') tempFunc = generateRandom;
         for(int i = 0 ; i < bitStream.size() ; i++) bitStream[i] = tempFunc();
         parts = Parts<U>(bitStream);
         BitTrans::x = parts.getConvertedValues().at(0) / (parts.getConvertedValues().at(1) / INDEX_NUMBER);
@@ -64,7 +64,7 @@ public:
             BitTrans::x = parts.getConvertedValues().at(0) / (parts.getConvertedValues().at(1) / INDEX_NUMBER);
             BitTrans::y = parts.getConvertedValues().at(2) / (parts.getConvertedValues().at(3) / INDEX_NUMBER);
         }
-        else throw out_of_range("Number should have exacly 164 bits");
+        else throw out_of_range("Input should have " + to_string(INDEX_NUMBER) + " elements");
     }
     Parts<U> print(){return parts;}
     void printXandY(){cout << "X -> " << x << " | Y -> " << y << endl;}
