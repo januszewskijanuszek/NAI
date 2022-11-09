@@ -5,6 +5,7 @@
 #include <string>
 #include <functional>
 #include <set>
+#include <ctime>
 
 #define INDEX_NUMBER 116
 
@@ -75,7 +76,7 @@ public:
     }
     Parts<U> print(){return parts;}
     vector<double> returnVector(){return {x, y};}
-    void printXandY(){cout << "X -> " << x << " | Y -> " << y << endl;}
+    void printXandY(function<double(vector<double>)> testedFun){cout << "X -> " << x << " | Y -> " << y << " | value -> " << testedFun({x, y})<< endl;}
     int getIndex() const {return index;}
 };
 template<typename T>
@@ -107,19 +108,21 @@ public:
         for(int e : indexes) selection.push_back(Fitnes<T>::dataSet.at(e));
         return selection;
     }
-    const vector<BitTrans<T>> &getDataSet() const {
-        return dataSet;
-    }
+    const function<double(vector<double>)> &getTestedFunction() const {return testedFunction;}
+    const vector<BitTrans<T>> &getDataSet() const {return dataSet;}
 };
 
 int main(){
+    clock_t start, end;
+    start = clock();
     function<double(vector<double>)> boothFunction = [](const vector<double>& values){
         return pow(values.at(0) + 2 * values.at(1) - 7, 2) + pow(2 * values.at(0) + values.at(1) - 5, 2);
     };
     Fitnes<bool> fit = Fitnes<bool>(1000, boothFunction);
     fit.selectStrongest(50);
-    for(BitTrans<bool> element : fit.selectStrongest(50)){
-        element.printXandY();
-    }
+    for(BitTrans<bool> element : fit.selectStrongest(50))
+        element.printXandY(fit.getTestedFunction());
+    end = clock();
+    cout << "Time: " << (double)(end - start) / CLOCKS_PER_SEC << endl;
     return 0;
 }
