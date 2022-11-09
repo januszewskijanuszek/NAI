@@ -101,12 +101,11 @@ public:
                                                                to_string(dataSet.size()));
         vector<BitTrans<T>> selection;
         vector<int> indexes;
-        set<pair<double ,int>> setOfBits;
+        set<pair<double ,BitTrans<T>*>> setOfBits;
         for(int i = 0 ; i < Fitnes<T>::dataSet.size() ; i++)
-            setOfBits.insert({Fitnes<T>::testedFunction(Fitnes<T>::dataSet.at(i).returnVector()), i});
+            setOfBits.insert({Fitnes<T>::testedFunction(Fitnes<T>::dataSet.at(i).returnVector()), &Fitnes<T>::dataSet[i]});
         for(auto setElement = setOfBits.begin() ; 0 < amount ; amount--, setElement++)
-            indexes.push_back(setElement -> second);
-        for(int e : indexes) selection.push_back(Fitnes<T>::dataSet.at(e));
+            selection.push_back(*setElement -> second);
         return selection;
     }
     const function<double(vector<double>)> &getTestedFunction() const {return testedFunction;}
