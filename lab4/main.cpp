@@ -76,7 +76,8 @@ public:
     }
     Parts<U> print(){return parts;}
     vector<double> returnVector(){return {x, y};}
-    void printXandY(function<double(vector<double>)> testedFun){cout << "X -> " << x << " | Y -> " << y << " | value -> " << testedFun({x, y})<< endl;}
+    void printXandY(function<double(vector<double>)> testedFun){
+        cout << " ID: " << BitTrans<U>::index << " | X -> " << x << " | Y -> " << y << " | value -> " << testedFun({x, y})<< endl;}
     int getIndex() const {return index;}
 };
 template<typename T>
@@ -101,8 +102,8 @@ public:
         vector<BitTrans<T>> selection;
         vector<int> indexes;
         set<pair<double ,int>> setOfBits;
-        for(BitTrans<T> element : Fitnes<T>::dataSet)
-            setOfBits.insert({Fitnes<T>::testedFunction(element.returnVector()), element.getIndex()});
+        for(int i = 0 ; i < Fitnes<T>::dataSet.size() ; i++)
+            setOfBits.insert({Fitnes<T>::testedFunction(Fitnes<T>::dataSet.at(i).returnVector()), i});
         for(auto setElement = setOfBits.begin() ; 0 < amount ; amount--, setElement++)
             indexes.push_back(setElement -> second);
         for(int e : indexes) selection.push_back(Fitnes<T>::dataSet.at(e));
