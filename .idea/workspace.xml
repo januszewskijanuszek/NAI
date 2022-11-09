@@ -14,8 +14,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52d9f818-9322-4cef-97c6-b9e78716e920" name="Changes" comment="4.2 generic types">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="52d9f818-9322-4cef-97c6-b9e78716e920" name="Changes" comment="4.3 Fit">
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
@@ -113,7 +112,7 @@
       <workItem from="1667754227639" duration="1705000" />
       <workItem from="1667779630389" duration="1657000" />
       <workItem from="1667861426110" duration="4794000" />
-      <workItem from="1667950905253" duration="8261000" />
+      <workItem from="1667950905253" duration="8838000" />
     </task>
     <task id="LOCAL-00001" summary="first steps">
       <created>1665868621862</created>
@@ -311,7 +310,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667863600704</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="4.3 Fit">
+      <created>1667963854713</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1667963854713</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,7 +353,8 @@
     <MESSAGE value="4.0 done" />
     <MESSAGE value="4.1" />
     <MESSAGE value="4.2 generic types" />
-    <option name="LAST_COMMIT_MESSAGE" value="4.2 generic types" />
+    <MESSAGE value="4.3 Fit" />
+    <option name="LAST_COMMIT_MESSAGE" value="4.3 Fit" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

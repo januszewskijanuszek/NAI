@@ -91,7 +91,7 @@ class Fitnes{
         return set;
     }
 public:
-    Fitnes<T>(int amount, function<double(vector<double>)> testedFunction){
+    explicit Fitnes<T>(int amount, function<double(vector<double>)> testedFunction){
         Fitnes<T>::dataSet = getRandomData(amount);
         Fitnes<T>::testedFunction = testedFunction;
     }
