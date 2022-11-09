@@ -63,9 +63,9 @@ private:
 public:
     TestFunction(){};
     TestFunction(string name, function<double(vector<double>)> testFunction, vector<double> domain){
-        this -> testFunction = testFunction;
-        this -> domain = Domain(domain);
-        this -> name = name;
+        TestFunction::testFunction = testFunction;
+        TestFunction::domain = Domain(domain);
+        TestFunction::name = name;
     }
     Result bruteForce(int iteracions = 100000){
         clock_t start, end;
