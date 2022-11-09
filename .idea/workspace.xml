@@ -69,12 +69,12 @@
     <property name="structure.view.defaults.are.configured" value="true" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="NAI" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-h" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="NAI" TARGET_NAME="NAI" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="NAI" RUN_TARGET_NAME="NAI">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NAI" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-h" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="NAI" TARGET_NAME="NAI" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="NAI" RUN_TARGET_NAME="NAI">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -113,6 +113,7 @@
       <workItem from="1667754227639" duration="1705000" />
       <workItem from="1667779630389" duration="1657000" />
       <workItem from="1667861426110" duration="4794000" />
+      <workItem from="1667950905253" duration="8261000" />
     </task>
     <task id="LOCAL-00001" summary="first steps">
       <created>1665868621862</created>

@@ -4,6 +4,7 @@
 #include <bitset>
 #include <string>
 #include <functional>
+#include <set>
 
 #define INDEX_NUMBER 116
 
@@ -37,6 +38,7 @@ private:
     vector<U> bitStream;
     Parts<U> parts;
     double x, y;
+    int index;
     static int generateRandom(){
         mt19937 rng(random_device{}());
         return uniform_int_distribution<int>{numeric_limits<U>::min(), numeric_limits<U>::max()}(rng);
@@ -46,7 +48,9 @@ private:
         return uniform_int_distribution<>{0, 1}(rng);
     }
 public:
+    static int lastIndex;
     BitTrans<U>(){
+        BitTrans<U>::index = lastIndex++;
         bitStream.resize(INDEX_NUMBER);
         function<U()> tempFunc;
         const type_info &inputedType = typeid(U);
@@ -54,10 +58,13 @@ public:
         if(*inputedType.name() == 'i') tempFunc = generateRandom;
         for(int i = 0 ; i < bitStream.size() ; i++) bitStream[i] = tempFunc();
         parts = Parts<U>(bitStream);
-        BitTrans::x = parts.getConvertedValues().at(0) / (parts.getConvertedValues().at(1) / INDEX_NUMBER);
-        BitTrans::y = parts.getConvertedValues().at(2) / (parts.getConvertedValues().at(3) / INDEX_NUMBER);
+        int mX = generateRandomBool() ? -1 : 1;
+        int mY = generateRandomBool() ? -1 : 1;
+        BitTrans::x = mX * parts.getConvertedValues().at(0) / (parts.getConvertedValues().at(1) / INDEX_NUMBER);
+        BitTrans::y = mY * parts.getConvertedValues().at(2) / (parts.getConvertedValues().at(3) / INDEX_NUMBER);
     }
-    BitTrans<U>(const vector<U> &bitStream){
+    BitTrans<U>(const vector<U> &bitStream, int index){
+        BitTrans<U>::index = lastIndex++;
         if (bitStream.size() == INDEX_NUMBER){
             BitTrans::bitStream = bitStream;
             parts = Parts<U>(bitStream);
@@ -67,11 +74,52 @@ public:
         else throw out_of_range("Input should have " + to_string(INDEX_NUMBER) + " elements");
     }
     Parts<U> print(){return parts;}
+    vector<double> returnVector(){return {x, y};}
     void printXandY(){cout << "X -> " << x << " | Y -> " << y << endl;}
+    int getIndex() const {return index;}
+};
+template<typename T>
+int BitTrans<T>::lastIndex = 0;
+template<typename T>
+class Fitnes{
+    function<double(vector<double>)> testedFunction;
+    vector<BitTrans<T>> dataSet;
+    static vector<BitTrans<T>> getRandomData(int amount){
+        vector<BitTrans<T>> set;
+        for(int i = 0 ; i < amount ; i++) set.push_back(BitTrans<T>());
+        return set;
+    }
+public:
+    Fitnes<T>(int amount, function<double(vector<double>)> testedFunction){
+        Fitnes<T>::dataSet = getRandomData(amount);
+        Fitnes<T>::testedFunction = testedFunction;
+    }
+    vector<BitTrans<T>> selectStrongest(int amount){
+        if(amount > dataSet.size()) throw out_of_range("Only allowed number between " + to_string(1) + " - " +
+                                                               to_string(dataSet.size()));
+        vector<BitTrans<T>> selection;
+        vector<int> indexes;
+        set<pair<double ,int>> setOfBits;
+        for(BitTrans<T> element : Fitnes<T>::dataSet)
+            setOfBits.insert({Fitnes<T>::testedFunction(element.returnVector()), element.getIndex()});
+        for(auto setElement = setOfBits.begin() ; 0 < amount ; amount--, setElement++)
+            indexes.push_back(setElement -> second);
+        for(int e : indexes) selection.push_back(Fitnes<T>::dataSet.at(e));
+        return selection;
+    }
+    const vector<BitTrans<T>> &getDataSet() const {
+        return dataSet;
+    }
 };
 
 int main(){
-    BitTrans<bool> gene;
-    gene.printXandY();
+    function<double(vector<double>)> boothFunction = [](const vector<double>& values){
+        return pow(values.at(0) + 2 * values.at(1) - 7, 2) + pow(2 * values.at(0) + values.at(1) - 5, 2);
+    };
+    Fitnes<bool> fit = Fitnes<bool>(1000, boothFunction);
+    fit.selectStrongest(50);
+    for(BitTrans<bool> element : fit.selectStrongest(50)){
+        element.printXandY();
+    }
     return 0;
 }
