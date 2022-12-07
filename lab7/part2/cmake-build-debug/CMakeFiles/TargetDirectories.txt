@@ -1,0 +1,3 @@
+C:/Users/s22638/Downloads/NAI-main/lab7/part2/cmake-build-debug/CMakeFiles/part2.dir
+C:/Users/s22638/Downloads/NAI-main/lab7/part2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/s22638/Downloads/NAI-main/lab7/part2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
