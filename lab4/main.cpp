@@ -27,14 +27,16 @@ private:
         Parts<T>(vector<T> bitStream){
             for(int i = 0 ; i < INDEX_NUMBER ; i += INDEX_NUMBER / 4){
                 string temp;
-                for(int j = 0 ; j < INDEX_NUMBER / 4 ; j++) temp += to_string(bitStream.at(j + i));
+                for(int j = 0 ; j < INDEX_NUMBER / 4; j++) temp += to_string(bitStream.at(j + i));
+                double minus = temp.at(0) == '1' ? -1 : 1;
                 bitsetElements.push_back(bitset<INDEX_NUMBER / 4>(temp));
-                convertedValues.push_back(bitset<INDEX_NUMBER / 4>(temp).to_ullong());
+                temp.erase(0, 1);
+                convertedValues.push_back(bitset<INDEX_NUMBER / 4 - 1>(temp).to_ullong() * minus);
             }
         }
         const vector<double> &getConvertedValues() const {return convertedValues;}
         const void toBinary(){for(bitset<INDEX_NUMBER / 4> bit : bitsetElements) cout << bit << endl;}
-        const void toDecimal(){for(bitset<INDEX_NUMBER / 4> bit : bitsetElements) cout << bit.to_ullong() << endl;}
+        const void toDecimal(){for(double bit : Parts<T>::convertedValues) cout << bit << endl;}
     };
     vector<U> bitStream;
     Parts<U> parts;
@@ -59,10 +61,8 @@ public:
         if(*inputedType.name() == 'i') tempFunc = generateRandom;
         for(int i = 0 ; i < bitStream.size() ; i++) bitStream[i] = tempFunc();
         parts = Parts<U>(bitStream);
-        int mX = generateRandomBool() ? -1 : 1;
-        int mY = generateRandomBool() ? -1 : 1;
-        BitTrans::x = mX * parts.getConvertedValues().at(0) / (parts.getConvertedValues().at(1) / INDEX_NUMBER);
-        BitTrans::y = mY * parts.getConvertedValues().at(2) / (parts.getConvertedValues().at(3) / INDEX_NUMBER);
+        BitTrans::x = parts.getConvertedValues().at(0) / (parts.getConvertedValues().at(1) / INDEX_NUMBER);
+        BitTrans::y = parts.getConvertedValues().at(2) / (parts.getConvertedValues().at(3) / INDEX_NUMBER);
     }
     BitTrans<U>(const vector<U> &bitStream, int index){
         BitTrans<U>::index = lastIndex++;
@@ -113,8 +113,8 @@ public:
 };
 
 int main(){
-    clock_t start, end;
-    start = clock();
+//    clock_t start, end;
+//    start = clock();
     function<double(vector<double>)> boothFunction = [](const vector<double>& values){
         return pow(values.at(0) + 2 * values.at(1) - 7, 2) + pow(2 * values.at(0) + values.at(1) - 5, 2);
     };
@@ -122,7 +122,7 @@ int main(){
     fit.selectStrongest(50);
     for(BitTrans<bool> element : fit.selectStrongest(50))
         element.printXandY(fit.getTestedFunction());
-    end = clock();
-    cout << "Time: " << (double)(end - start) / CLOCKS_PER_SEC << endl;
+//    end = clock();
+//    cout << "Time: " << (double)(end - start) / CLOCKS_PER_SEC << endl;
     return 0;
 }

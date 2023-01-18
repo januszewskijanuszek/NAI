@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
-  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+  <component name="CMakePresetLoader"><![CDATA[{
+  "useNewFormat": true
+}]]></component>
+  <component name="CMakeRunConfigurationManager">
     <generated>
       <config projectName="NAI" targetName="NAI" />
     </generated>
@@ -14,9 +14,37 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52d9f818-9322-4cef-97c6-b9e78716e920" name="Changes" comment="4.3 Fit">
+    <list default="true" id="724aa25a-c47d-435a-83a4-1397420e6265" name="Changes" comment="siema">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-eb8c95d8b4d70dccaab8.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-368bc4ef365b42f95f02.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-85dc6743cda1d8e17895.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-d0094a50bb2071803777.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2022-11-07T22-50-50-0471.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-NAI-Debug-3ad0f7e990f5c476856c.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-dcdff42f78366140c9fe.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.21.1/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.21.1/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.21.1/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.21.1/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.21.1/CMakeRCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.21.1/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.21.1/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.21.1/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,10 +59,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../../../../../mingw64/lib/gcc/x86_64-w64-mingw32/12.2.0/include-fixed/limits.h" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/lab2/main.cpp" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/lab4/main.cpp" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/lab3/main.cpp" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/lab4/main.cpp" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -49,25 +76,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="cf.first.check.clang-format" value="false" />
-    <property name="cidr.known.project.marker" value="true" />
-    <property name="cmake.loaded.for.project" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/lab8/opencv-4.x" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
-    <property name="structure.view.defaults.are.configured" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.editor"
+  }
+}]]></component>
   <component name="RunManager">
-    <configuration name="NAI" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-h" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="NAI" TARGET_NAME="NAI" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="NAI" RUN_TARGET_NAME="NAI">
+    <configuration name="NAI" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="bea -4.5 4.5 -4.5 4.5" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="NAI" TARGET_NAME="NAI" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="NAI" RUN_TARGET_NAME="NAI">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -76,273 +103,35 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="52d9f818-9322-4cef-97c6-b9e78716e920" name="Changes" comment="" />
-      <created>1665672799519</created>
+      <changelist id="724aa25a-c47d-435a-83a4-1397420e6265" name="Changes" comment="" />
+      <created>1665445998213</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1665672799519</updated>
-      <workItem from="1665672801195" duration="63000" />
-      <workItem from="1665864322389" duration="8352000" />
-      <workItem from="1665878632858" duration="723000" />
-      <workItem from="1665924968446" duration="7200000" />
-      <workItem from="1665945982688" duration="32000" />
-      <workItem from="1665946193890" duration="153000" />
-      <workItem from="1665962580695" duration="593000" />
-      <workItem from="1666101153588" duration="1434000" />
-      <workItem from="1666126241953" duration="1705000" />
-      <workItem from="1666645435844" duration="1790000" />
-      <workItem from="1666703759309" duration="1637000" />
-      <workItem from="1666903410161" duration="5038000" />
-      <workItem from="1666911313332" duration="1000" />
-      <workItem from="1667147208549" duration="4091000" />
-      <workItem from="1667226393013" duration="511000" />
-      <workItem from="1667227972336" duration="1081000" />
-      <workItem from="1667274455586" duration="1000" />
-      <workItem from="1667316631427" duration="35453000" />
-      <workItem from="1667390018254" duration="772000" />
-      <workItem from="1667390854240" duration="22243000" />
-      <workItem from="1667521709854" duration="6012000" />
-      <workItem from="1667569004737" duration="6879000" />
-      <workItem from="1667754227639" duration="1705000" />
-      <workItem from="1667779630389" duration="1657000" />
-      <workItem from="1667861426110" duration="4794000" />
-      <workItem from="1667950905253" duration="10925000" />
-      <workItem from="1668087634640" duration="462000" />
-      <workItem from="1670364613456" duration="360000" />
-      <workItem from="1670970479719" duration="25000" />
+      <updated>1665445998213</updated>
+      <workItem from="1665446002209" duration="75000" />
+      <workItem from="1665564258423" duration="133000" />
+      <workItem from="1665564411443" duration="582000" />
+      <workItem from="1665585297073" duration="2373000" />
+      <workItem from="1666006270926" duration="56000" />
+      <workItem from="1666190357470" duration="26000" />
+      <workItem from="1666190402293" duration="2539000" />
+      <workItem from="1668008922704" duration="4540000" />
     </task>
-    <task id="LOCAL-00001" summary="first steps">
-      <created>1665868621862</created>
+    <task id="LOCAL-00001" summary="siema">
+      <created>1665588215101</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1665868621862</updated>
+      <updated>1665588215101</updated>
     </task>
-    <task id="LOCAL-00002" summary="first function update">
-      <created>1665869736831</created>
+    <task id="LOCAL-00002" summary="siema">
+      <created>1665588242140</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1665869736831</updated>
+      <updated>1665588242140</updated>
     </task>
-    <task id="LOCAL-00003" summary="first function update">
-      <created>1665870074788</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1665870074788</updated>
-    </task>
-    <task id="LOCAL-00004" summary="working second function update">
-      <created>1665870848421</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1665870848421</updated>
-    </task>
-    <task id="LOCAL-00005" summary="working second function update">
-      <created>1665870854291</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1665870854291</updated>
-    </task>
-    <task id="LOCAL-00006" summary="working second function update">
-      <created>1665871958401</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1665871958401</updated>
-    </task>
-    <task id="LOCAL-00007" summary="beginning working at bruteforce">
-      <created>1665928067741</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1665928067741</updated>
-    </task>
-    <task id="LOCAL-00008" summary="finish">
-      <created>1665930806037</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1665930806037</updated>
-    </task>
-    <task id="LOCAL-00009" summary="finish">
-      <created>1665932549086</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1665932549086</updated>
-    </task>
-    <task id="LOCAL-00010" summary="finish">
-      <created>1666738847038</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1666738847038</updated>
-    </task>
-    <task id="LOCAL-00011" summary="finish">
-      <created>1666739234008</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1666739234008</updated>
-    </task>
-    <task id="LOCAL-00012" summary="0.1">
-      <created>1666904397189</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1666904397189</updated>
-    </task>
-    <task id="LOCAL-00013" summary="0.2">
-      <created>1666908299116</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1666908299116</updated>
-    </task>
-    <task id="LOCAL-00014" summary="0.3">
-      <created>1667316867009</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1667316867009</updated>
-    </task>
-    <task id="LOCAL-00015" summary="0.4">
-      <created>1667317982230</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1667317982230</updated>
-    </task>
-    <task id="LOCAL-00016" summary="0.5">
-      <created>1667319595838</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1667319595838</updated>
-    </task>
-    <task id="LOCAL-00017" summary="0.6">
-      <created>1667330346564</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1667330346564</updated>
-    </task>
-    <task id="LOCAL-00018" summary="0.7 bruteforce">
-      <created>1667332481146</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1667332481146</updated>
-    </task>
-    <task id="LOCAL-00019" summary="0.8">
-      <created>1667333644593</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1667333644593</updated>
-    </task>
-    <task id="LOCAL-00020" summary="3.8">
-      <created>1667333674780</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1667333674780</updated>
-    </task>
-    <task id="LOCAL-00021" summary="3.9">
-      <created>1667334303726</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1667334303726</updated>
-    </task>
-    <task id="LOCAL-00022" summary="4.0 done">
-      <created>1667339073052</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1667339073052</updated>
-    </task>
-    <task id="LOCAL-00023" summary="4.1">
-      <created>1667351298125</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1667351298125</updated>
-    </task>
-    <task id="LOCAL-00024" summary="4.1">
-      <created>1667351305196</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1667351305196</updated>
-    </task>
-    <task id="LOCAL-00025" summary="4.1">
-      <created>1667351893638</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1667351893638</updated>
-    </task>
-    <task id="LOCAL-00026" summary="4.1">
-      <created>1667391213188</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1667391213188</updated>
-    </task>
-    <task id="LOCAL-00027" summary="4.2 generic types">
-      <created>1667863592173</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1667863592173</updated>
-    </task>
-    <task id="LOCAL-00028" summary="4.2 generic types">
-      <created>1667863600704</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1667863600704</updated>
-    </task>
-    <task id="LOCAL-00029" summary="4.3 Fit">
-      <created>1667963854713</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1667963854713</updated>
-    </task>
-    <task id="LOCAL-00030" summary="4.3 Fit">
-      <created>1667964383643</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1667964383643</updated>
-    </task>
-    <task id="LOCAL-00031" summary="4.3 Fit">
-      <created>1667964556192</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1667964556192</updated>
-    </task>
-    <task id="LOCAL-00032" summary="4.3 Fit">
-      <created>1667965109713</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1667965109713</updated>
-    </task>
-    <task id="LOCAL-00033" summary="4.3 Fit">
-      <created>1667966432990</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1667966432990</updated>
-    </task>
-    <option name="localTasksCounter" value="34" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,33 +149,19 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="first steps" />
-    <MESSAGE value="first function update" />
-    <MESSAGE value="working second function update" />
-    <MESSAGE value="beginning working at bruteforce" />
-    <MESSAGE value="finish" />
-    <MESSAGE value="0.1" />
-    <MESSAGE value="0.2" />
-    <MESSAGE value="0.3" />
-    <MESSAGE value="0.4" />
-    <MESSAGE value="0.5" />
-    <MESSAGE value="0.6" />
-    <MESSAGE value="0.7 bruteforce" />
-    <MESSAGE value="0.8" />
-    <MESSAGE value="3.8" />
-    <MESSAGE value="3.9" />
-    <MESSAGE value="4.0 done" />
-    <MESSAGE value="4.1" />
-    <MESSAGE value="4.2 generic types" />
-    <MESSAGE value="4.3 Fit" />
-    <option name="LAST_COMMIT_MESSAGE" value="4.3 Fit" />
+    <MESSAGE value="siema" />
+    <option name="LAST_COMMIT_MESSAGE" value="siema" />
   </component>
   <component name="XDebuggerManager">
-    <watches-manager>
-      <configuration name="CMakeRunConfiguration">
-        <watch expression="this" />
-      </configuration>
-    </watches-manager>
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/lab4/main.cpp</url>
+          <line>26</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

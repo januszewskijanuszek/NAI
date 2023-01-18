@@ -1,0 +1,1 @@
+biblioteka opencv jest za duża aby wrzucić na github. Link do opencv https://github.com/opencv/opencv

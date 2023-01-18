@@ -3,4 +3,4 @@ project(NAI)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(NAI lab4/main.cpp)
+add_executable(NAI lab3/main.cpp)
